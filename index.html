@@ -209,7 +209,8 @@
                             </ul>
                         </div>
                     </article>
-                    <article class="post" id="article-10" data-tags="code design news reviews" data-author="George Tuxedo">
+                    <article class="post" id="article-10" data-tags="code design news reviews"
+                        data-author="George Tuxedo">
                         <h3 class="post-title">Article 10</h3>
                         <p class="post-author">by</p>
                         <div class="post-content">
@@ -246,6 +247,31 @@
             </main>
         </div>
     </div>
+    <script id="template-article-link" type="text/x-handlebars-template">
+        <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
+      </script>
+    <script id="template-tag-link" type="text/x-handlebars-template">
+        <li><a href="#tag-{{ articleTag }}">{{ articleTag }}</a></li>
+      </script>
+    <script id="template-author-article" type="text/x-handlebars-template">
+        by <a href="#tag-{{ author }}">{{ author }}</a>
+      </script>
+    <script id="tagCloudLink" type="text/x-handlebars-template">
+          {{#each tags}}
+          <li><a class="{{ className }}" href="#tag-{{ tag }}">{{ tag }}</a></li>
+          {{/each}}
+      </script>
+
+      <script id="template-author" type="text/x-handlebars-template">
+        {{#each list}}
+        <li>
+            <a href="#tag-{{ this }}">
+                <span class="author-name">{{ this }}</span>
+            </a>
+          </li>
+          {{/each}}
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
